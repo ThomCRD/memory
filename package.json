@@ -1,0 +1,21 @@
+{
+  "name": "projcesi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "memory.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThomCRD/memory.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ThomCRD/memory/issues"
+  },
+  "homepage": "https://github.com/ThomCRD/memory#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.19.2"
+  }
+}

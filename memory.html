@@ -94,20 +94,43 @@
     <script>
         var cartesRecto=[0,0,1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9];
         var nbPaire=0;
-        var cartesVerso=0;
+        var cartesSelect=0;
         var carte1=[];
         var carte2=[];
-        var tabCartes=document.getElementsByClassName("row").getElementsByTagName("img");
+        var tabCartes=document.getElementsByTagName("img");//.getElementsByClassName("row")
 
         for(var i=0;i<tabCartes.length;i++){
             tabCartes[i].nbCarte=i;
             tabCartes[i].onclick=function(){
                 play(this.nbCarte);
+                test();
+                reset();
             }                      
         }
 
         function play(nbCarte){
-            console.log("hello world");
+            tabCartes[nbCarte].src="images/image"+cartesRecto[nbCarte]+".jpeg";
+            cartesSelect=cartesSelect+1;
+            if (cartesSelect==1){
+                carte1="images/image"+cartesRecto[nbCarte]+".jpeg";
+            }
+            if (cartesSelect==2){
+                carte2="images/image"+cartesRecto[nbCarte]+".jpeg";
+            }
+        }
+
+        function test(){
+            if (carte1==carte2){
+                nbPaire=nbPaire+1;
+                console.log("congratulation");
+            }
+        }
+
+        function reset(){
+            if (cartesSelect==2){
+                cartesSelect=0;
+                console.log(nbPaire);
+            }
         }
     </script>
 </body>
