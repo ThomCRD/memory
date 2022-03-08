@@ -129,11 +129,11 @@
             if(cartesSelect==2){
                 if (carte1==carte2){
                     nbPaire=nbPaire+1;
-                    console.log("congratulation");
+                    //console.log("congratulation");
                 }
                 else{
-                    tabCartes[carteTemp1].src="images/dos.jpeg";
-                    tabCartes[carteTemp2].src="images/dos.jpeg";
+                    setTimeout(()=>{ tabCartes[carteTemp1].src="images/dos.jpeg"},1000);
+                    setTimeout(()=>{ tabCartes[carteTemp2].src="images/dos.jpeg"},1000);
                 }
             }
         }
@@ -141,7 +141,7 @@
         function reset(){
             if (cartesSelect==2){
                 cartesSelect=0;
-                console.log(nbPaire);
+                console.log("number of pair : " + nbPaire);
             }
         }
 
