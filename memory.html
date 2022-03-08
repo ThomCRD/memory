@@ -97,6 +97,8 @@
         var cartesSelect=0;
         var carte1=[];
         var carte2=[];
+        var carteTemp1=0;
+        var carteTemp2=0;
         var tabCartes=document.getElementsByTagName("img");//.getElementsByClassName("row")
 
         for(var i=0;i<tabCartes.length;i++){
@@ -105,6 +107,7 @@
                 play(this.nbCarte);
                 test();
                 reset();
+                win();
             }                      
         }
 
@@ -113,16 +116,25 @@
             cartesSelect=cartesSelect+1;
             if (cartesSelect==1){
                 carte1="images/image"+cartesRecto[nbCarte]+".jpeg";
+                carteTemp1=nbCarte;
+
             }
             if (cartesSelect==2){
                 carte2="images/image"+cartesRecto[nbCarte]+".jpeg";
+                carteTemp2=nbCarte;
             }
         }
 
         function test(){
-            if (carte1==carte2){
-                nbPaire=nbPaire+1;
-                console.log("congratulation");
+            if(cartesSelect==2){
+                if (carte1==carte2){
+                    nbPaire=nbPaire+1;
+                    console.log("congratulation");
+                }
+                else{
+                    tabCartes[carteTemp1].src="images/dos.jpeg";
+                    tabCartes[carteTemp2].src="images/dos.jpeg";
+                }
             }
         }
 
@@ -130,6 +142,12 @@
             if (cartesSelect==2){
                 cartesSelect=0;
                 console.log(nbPaire);
+            }
+        }
+
+        function win(){
+            if (nbPaire==10){
+                console.log("You WIN")
             }
         }
     </script>
