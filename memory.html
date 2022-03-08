@@ -103,8 +103,8 @@
 
         for(var i=0;i<tabCartes.length;i++){
             tabCartes[i].nbCarte=i;
+            init();
             tabCartes[i].onclick=function(){
-                init();
                 play(this.nbCarte);
                 test();
                 reset();
