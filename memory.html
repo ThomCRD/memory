@@ -104,11 +104,21 @@
         for(var i=0;i<tabCartes.length;i++){
             tabCartes[i].nbCarte=i;
             tabCartes[i].onclick=function(){
+                init();
                 play(this.nbCarte);
                 test();
                 reset();
                 win();
             }                      
+        }
+
+        function init(){
+            for(var zone=cartesRecto.length-1; zone>=1; zone--){
+                var aleat=Math.floor(Math.random()*(zone+1));
+                var back=cartesRecto[zone];
+                cartesRecto[zone]=cartesRecto[aleat];
+                cartesRecto[aleat]=back;
+            }
         }
 
         function play(nbCarte){
@@ -147,7 +157,7 @@
 
         function win(){
             if (nbPaire==10){
-                console.log("You WIN")
+                console.log("You WIN");
             }
         }
     </script>
